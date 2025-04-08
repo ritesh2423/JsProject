@@ -1,0 +1,9 @@
+body{
+    text-align: center;
+    background-color: aqua;
+    padding-top: 5%;
+}
+.weightguide{
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="bmi.css">
+</head>
+<body>
+    <button type="button"><a href="index.html">HOME</a></button>
+    <h1>BMI Calculator</h1>
+    <br>
+    <p>Bmi Calculator is used to determine the Body Mass Index of an Individual to measure it's health levels.</p>
+    <br>
+    <p>It is divided into three categories :</p>
+    <div class="weightguide">
+        <ul>
+            <li>Underweight (0 to 18.6) </li>
+            <li>Normal (18.6 to 24.9)</li>
+            <li>Overweight (more than 24.9)</li>
+        </ul>
+    </div>
+    <br>
+    <form action="get">
+        <div class="data">
+            <label>Enter Height in Cm : </label><input type="text" name="height" id="height"><br>
+            <br>
+            <label>Enter Weight in Kg : </label><input type="text" name="weight" id="weight"><br>
+            <br>
+            <br>
+            <button type="submit" id="Calculator">Calculate</button>
+        </div>
+        <br>
+
+        <div id="result"></div>
+        <br>
+        <div id="cat"></div>
+    </form>
+</body>
+<script>
+    let form = document.querySelector("form")
+    form.addEventListener('submit',(e)=>{
+        e.preventDefault()
+        const height = parseInt(document.querySelector("#height").value)
+        const weight = parseInt(document.querySelector("#weight").value)
+        const result = document.querySelector("#result")
+        const cat = document.querySelector("#cat")
+
+        if(height<0 || height==='' || isNaN(height)){
+            result.innerHTML = `Please enter valid height ${height}`
+        }
+        else if(weight<0 || weight==='' || isNaN(weight)){
+            result.innerHTML = `please enter valid weight ${weight}`
+        }
+        else{
+            let res=Math.round((weight*100*100)/(height*height))
+            result.innerHTML = `Your BMI is ${res}`
+            if(res<18.6){
+                cat.innerHTML = `Your BMI ${res} lies in Underweight Category`
+            }else if(res>=18.6 && res<=24.9)
+            {
+                cat.innerHTML = `Your BMI ${res} lies in Normal Category`
+            }
+            else{
+                cat.innerHTML = `Your BMI ${res} lies in OverWeight Category`
+            }
+        }
+    })
+</script>
+</html>

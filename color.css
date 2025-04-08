@@ -1,0 +1,44 @@
+body {
+    padding-top: 5%; /* Keep the top padding */
+    text-align: center; /* Center text inside the squares */
+    margin: 0; /* Remove default margin */
+}
+
+.container {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    gap: 10px; /* Optional: Add space between squares */
+}
+
+button {
+    font-size: large;
+}
+
+p {
+    font-size: x-large;
+}
+
+#gold, #brown, #coral, #darkviolet {
+    width: 100px;
+    height: 100px;
+    display: flex; /* Use flexbox for centering text inside squares */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+}
+
+#gold {
+    background-color: gold;
+}
+
+#brown {
+    background-color: brown;
+}
+
+#coral {
+    background-color: coral;
+}
+
+#darkviolet {
+    background-color: darkviolet;
+}

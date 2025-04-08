@@ -1,0 +1,15 @@
+body{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #212121;
+    color: whitesmoke;
+}
+#clock{
+    background-color: rgb(82, 116, 48);
+    justify-content: center;
+    height: 10%;
+    width: 8%;
+    border-radius: 15%;
+    margin-left: 46%
+}

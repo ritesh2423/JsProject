@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="color.css">    
+    <title>Document</title>
+</head>
+<body>
+    <button type="button"><a href="index.html">HOME</a></button>
+    <h1>Backgroung Color Changer</h1>
+    <br>
+    <h1>For Random Background Colors</h1>
+    <button type="button" id="button" onclick="color()">Click Me</button>
+    <h1>For Random Button Colors</h1>
+    <button type="button" id="button1">Click Me</button>
+    <br>
+    <br>
+    <h1>For Specified Colors</h1>
+    <div class="container">
+        <button type="button" class="button2" id="gold">Golden</button>
+        <button type="button" class="button2" id="brown">Brown</button>
+        <button type="button" class="button2" id="coral">Coral</button>
+        <button type="button" class="button2" id="darkviolet">Violet</button>
+    </div>
+</body>
+<script>
+    const body = document.querySelector("body")
+    function color()
+    {
+        let red=Math.floor(Math.random()*256);
+        let blue = Math.floor(Math.random()*256);
+        let green = Math.floor(Math.random()*256);
+        const body=document.querySelector("body")
+        body.style.backgroundColor= `rgb(${red}, ${blue}, ${green})`
+        
+    }
+    let button1 = document.querySelector("#button1")
+    button1.addEventListener('click',()=>{
+        let red=Math.floor(Math.random()*256);
+        let blue = Math.floor(Math.random()*256);
+        let green = Math.floor(Math.random()*256);
+        button1.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`
+        const button = document.querySelector("#button")
+        button.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`
+    });
+    const cell = document.querySelectorAll(".button2")
+    cell.forEach((ele)=>{
+        ele.addEventListener('click',(e)=>{
+            if(e.target.id === 'brown')
+            {
+                body.style.backgroundColor = e.target.id;
+            }
+            if(e.target.id === 'gold')
+            {
+                body.style.backgroundColor = e.target.id;
+            }
+            if(e.target.id === 'coral')
+            {
+                body.style.backgroundColor = e.target.id;
+            }
+            if(e.target.id === 'darkviolet')
+            {
+                body.style.backgroundColor = e.target.id;
+            }
+        })
+    })
+</script>
+</html>

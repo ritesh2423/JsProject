@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Basic Functions</h1>
+    <br>
+    <div class = 'container'>
+        <span>Bakground Color Changing Page</span>
+        <span>
+            <button type="button" title="button" class="button">
+            <a href="color.html">Click to Redirect</a>
+            </button>
+        </span>
+        <br>
+        <br>
+        <span>BMI Calculator</span>
+        <span>
+            <button type="button" title="button" class="button">
+                <a href="bmi.html">Click To Redirect</a>
+            </button>
+        </span>
+        <br>
+        <br>
+        <span>Temperature Convertor</span>
+        <span>
+            <button type="button" title="button" class="button">
+                <a href="temp.html">Click Me</a>
+            </button>
+        </span>
+        <br>
+        <br>
+        <span>Clock</span>
+        <span>
+            <button type="button" title="button" class="button">
+                <a href="clock.html">Click Me</a>
+            </button>
+        </span>
+        <br>
+        <br>
+        <span>Guess The Number</span>
+        <span>
+            <button type="button" title="button" class="button">
+                <a href="guess_the_number.html">Click Me</a>
+            </button>
+        </span>
+    </div>
+</body>
+<script>
+    let body = document.querySelector("body")
+    let red=Math.floor(Math.random()*256)
+    let green=Math.floor(Math.random()*256)
+    let blue=Math.floor(Math.random()*256)
+    body.style.backgroundColor = `rgb(${red},${green},${blue})`
+</script>
+</html>

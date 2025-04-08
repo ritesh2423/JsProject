@@ -1,0 +1,13 @@
+body{
+    text-align: center;
+}
+.container{
+    font-size:larger;
+    padding: auto;
+    border-radius: 20%;
+}
+span{
+    padding: auto;
+    border: 20%;
+    border-radius: 20%;
+}

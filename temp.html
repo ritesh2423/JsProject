@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Convertor</title>
+    <link rel="stylesheet" href="temp.css">
+</head>
+<body>
+    <a href="index.html"><button type="button">Home</button></a><span><button type="button" id='color'onclick="color()">Color Changer</button></span>
+    <h1>Temperature Convertor</h1>
+    <h2>From Kelvin To Celius</h2>
+    <label>Enter Temperature in Kelvin  :  <input type="text" id="input1"></label>
+    <br>
+    <button type="button" id="button1">Convert</button>
+    <br>
+    <div class="resultCel"></div>
+    <br>
+    <h2>From Celcius to Fahrenheit</h2>
+    <label>Enter Temperature in Celcius  :  <input type="text" id="input2"></label>
+    <br>
+    <button type="button" id="button2">Convert</button>
+    <br>
+    <div class="resultfar"></div>
+    <br>
+    <h2>From Celcius to Kelvin</h2>
+    <label>Enter Temperature in Celcius  :  <input type="text" id="input3"></label>
+    <br>
+    <button type="button" id="button3">Convert</button>
+    <br>
+    <div class="resultkel"></div>
+    <br>
+    <h2>From Fahrenheit to Kelvin</h2>
+    <label>Enter Temperature in Fahrenheit  :  <input type="text" id="input4"></label>
+    <br>
+    <button type="button" id="button4">Convert</button>
+    <br>
+    <div class="resultfarkel"></div>
+    <br>
+</body>
+<script>
+    function color()
+    {
+        let red=Math.floor(Math.random()*256);
+        let blue = Math.floor(Math.random()*256);
+        let green = Math.floor(Math.random()*256);
+        const body=document.querySelector("body")
+        body.style.backgroundColor= `rgb(${red}, ${blue}, ${green})`
+    }
+    const button = document.querySelector('#button1')
+    button.addEventListener('click',()=>{
+        const result = document.querySelector(".resultCel")
+        const input = parseInt(document.querySelector("#input1").value)
+        if(isNaN(input)){
+            result.innerHTML = ` Not a number ${input}`
+        }else{
+        result.innerHTML = `Converted temperature in Celcius is ${input-273.15}`
+        }
+    })
+    const button1 = document.querySelector("#button2")
+    button1.addEventListener('click',()=>{
+        const result = document.querySelector(".resultfar")
+        const input = parseInt(document.querySelector("#input2").value)
+        if(isNaN(input)){
+            result.innerHTML = ` Not a number ${input}`
+        }else{
+            result.innerHTML = `Converted temperature in Fahreneit is ${(input*9/5)+32}`
+        }
+    })
+    const button2 = document.querySelector("#button3")
+    button2.addEventListener('click',()=>{
+        const result = document.querySelector(".resultkel")
+        const input = parseInt(document.querySelector("#input3").value)
+        if(isNaN(input)){
+            result.innerHTML = ` Not a number ${input}`
+        }else{
+            result.innerHTML = `Converted temperature in Kelvin is ${input+273.15}`
+        }
+    })
+    const button3 = document.querySelector("#button4")
+    button3.addEventListener('click',()=>{
+        const result = document.querySelector(".resultfarkel")
+        const input = parseInt(document.querySelector("#input2").value)
+        if(isNaN(input)){
+            result.innerHTML = ` Not a number ${input}`
+        }else{
+            result.innerHTML = `Converted temperature in Kelvin is ${((input-32)/1.8)+273.15}`
+        }
+    })
+</script>
+</html>

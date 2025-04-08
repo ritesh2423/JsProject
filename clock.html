@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="stylesheet" href="clock.css">
+</head>
+<body>
+    <a href="index.html"><button type="button">Home</button></a><span><button type="button" id='color'onclick="color()">Color Changer</button></span>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>Your Local Time Is</h2>
+    <div id="clock"></div>
+</body>
+<script>
+    function color()
+    {
+        let red=Math.floor(Math.random()*256);
+        let blue = Math.floor(Math.random()*256);
+        let green = Math.floor(Math.random()*256);
+        const body=document.querySelector("body")
+        body.style.backgroundColor= `rgb(${red}, ${blue}, ${green})`
+    }
+    const clock = document.getElementById("clock")
+    setInterval(()=>{
+        const date = new Date();
+        clock.innerHTML = date.toLocaleTimeString();
+    },1000)
+    
+</script>
+</html>
