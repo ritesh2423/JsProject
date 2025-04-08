@@ -11,9 +11,9 @@
     <h1>Backgroung Color Changer</h1>
     <br>
     <h1>For Random Background Colors</h1>
-    <button type="button" id="button" onclick="color()">Click Me</button>
-    <h1>For Random Button Colors</h1>
-    <button type="button" id="button1">Click Me</button>
+    <button type="button" id="button">Start</button>
+    <h1>To Stop Random Coloring</h1>
+    <button id="Stop">Stop</button>
     <br>
     <br>
     <h1>For Specified Colors</h1>
@@ -25,24 +25,18 @@
     </div>
 </body>
 <script>
-    const body = document.querySelector("body")
-    function color()
-    {
-        let red=Math.floor(Math.random()*256);
-        let blue = Math.floor(Math.random()*256);
-        let green = Math.floor(Math.random()*256);
-        const body=document.querySelector("body")
-        body.style.backgroundColor= `rgb(${red}, ${blue}, ${green})`
-        
-    }
-    let button1 = document.querySelector("#button1")
-    button1.addEventListener('click',()=>{
-        let red=Math.floor(Math.random()*256);
-        let blue = Math.floor(Math.random()*256);
-        let green = Math.floor(Math.random()*256);
-        button1.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`
-        const button = document.querySelector("#button")
-        button.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`
+    const body = document.querySelector("body");
+    let stop;
+    document.querySelector("#button").addEventListener('click',()=>{
+        stop = setInterval(()=>{
+            let red=Math.floor(Math.random()*256);
+            let blue = Math.floor(Math.random()*256);
+            let green = Math.floor(Math.random()*256);
+            body.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`
+        },1000);
+    });
+    document.querySelector("#Stop").addEventListener('click',()=>{
+        clearInterval(stop)
     });
     const cell = document.querySelectorAll(".button2")
     cell.forEach((ele)=>{
