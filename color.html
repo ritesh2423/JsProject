@@ -28,15 +28,18 @@
     const body = document.querySelector("body");
     let stop;
     document.querySelector("#button").addEventListener('click',()=>{
-        stop = setInterval(()=>{
+        if(!stop){
+            stop = setInterval(()=>{
             let red=Math.floor(Math.random()*256);
             let blue = Math.floor(Math.random()*256);
             let green = Math.floor(Math.random()*256);
             body.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`
-        },1000);
+            },1000);
+        }
     });
     document.querySelector("#Stop").addEventListener('click',()=>{
         clearInterval(stop)
+        stop=null;
     });
     const cell = document.querySelectorAll(".button2")
     cell.forEach((ele)=>{
